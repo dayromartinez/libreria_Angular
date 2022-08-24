@@ -1,0 +1,30 @@
+<h1>Libros Favoritos</h1>
+  <p>Nombre del libro: </p>
+  <input type="text" name="input_nombre_libro" id="" [value]="nombreLibro" />
+  <p>Género del libro: </p>
+  <input type="text" [value]="generoLibro" />
+  <p>Autor: </p>
+  <input type="text" [value]="nombreAutor" [(ngModel)]="nombreAutor"/>
+  <p>{{nombreAutor}}</p>
+  <hr />
+  <button type="click" (click)="onSendForm()">Enviar Formulario</button>
+  <br />
+  <br />
+
+  <div action="" *ngIf="displayNombreLibro; then showLibro; else hideLibro "></div>
+
+  <div *ngFor="let nombre of nombres">
+    <p>{{nombre}}</p>
+  </div>
+
+  <ng-template #showLibro>
+    <p>La amortajada - María Luisa Bombal</p>
+  </ng-template>
+
+  <ng-template #hideLibro>
+    <p>Nadita nada :(</p>
+  </ng-template>
+
+  <button type="click" (click)="onDefaultForm()">Formulario por defecto</button>
+
+<p>{{status}}</p>
