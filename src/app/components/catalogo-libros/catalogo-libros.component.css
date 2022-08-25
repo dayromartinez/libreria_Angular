@@ -1,0 +1,61 @@
+.boton-input{
+  background-color: white;
+}
+
+.boton-input:hover{
+  background-color: rgb(255, 217, 0);
+}
+
+#dropdown-menu {
+  background-color: white;
+  color: rgb(0, 110, 255);
+}
+
+#dropdown-menu:hover {
+  background-color: rgb(0, 110, 255);
+  color: white;
+}
+
+.select_tipo_busqueda{
+  width: 18%;
+  border-color: rgb(201, 201, 201);
+  padding-left: .5rem;
+}
+
+.select_tipo_busqueda:focus{
+  border-color: rgb(190, 190, 190);
+  outline: rgb(190, 190, 190);
+}
+
+.select_tipo_busqueda:hover{
+  background-color: rgb(0, 119, 255);
+  cursor: pointer;
+  color: white;
+}
+
+option{
+  background-color: white;
+  color: black;
+}
+
+.grilla_lista_libros{
+  /* display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gridGap: 1.5rem; */
+  /* display: flex !important;
+  flex-direction: row !important; */
+  /* justify-content: center; */
+  /* flex-wrap: wrap !important; */
+
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  margin: 0 0 0 15rem;
+}
+
+.card-libro{
+  width: 25rem;
+  margin-bottom: 5rem;
+}

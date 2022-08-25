@@ -1,0 +1,44 @@
+<h1 style="text-align: center; margin: 3rem 0 2rem 0">Catálogo de libros</h1>
+<h4 style="margin: 0 5rem 3rem 5rem; text-align: center;">A continuación encontrarás un catálogo por defecto de nuestro inventario. Si deseas buscar algún libro o autor en específico, escribe el título o nombre de este en el siguiente campo, indicando el tipo de búsqueda que deseas realizar: </h4>
+<div style="display: flex; justify-content: center; margin-bottom: 3rem;">
+  <div class="input-group mb-3" style="width: 50vw; background-color: rgb(192, 191, 191); border-radius: 10px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16" style="margin-left: 1rem;">
+      <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+    </svg>
+    <input type="text" class="form-control" placeholder="Buscar libro por título o autor..." [value]="searchInput" [(ngModel)]="searchInput" aria-label="Text input with dropdown button" aria-describedby="basic-addon1" style="margin-left: 1rem;" minlength="4" required>
+    <select class="select_tipo_busqueda" id="select_tipo_busqueda" [value]="tipoDeBusqueda" [(ngModel)]="tipoDeBusqueda">
+      <option selected>Buscar por...</option>
+      <option value="Título">Título</option>
+      <option value="Autor">Autor</option>
+    </select>
+    <button class="btn btn-outline-warning boton-input" type="button" id="button-addon2" (click)="onClick()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+<div class="grilla_lista_libros">
+  <ng-container *ngFor="let libro of libros">
+    <div class="card col card-libro">
+      <img src={{libro?.imagen}} class="card-img-top" alt="Imagen libro" style="height: 500px;">
+      <div class="card-body">
+        <h3 class="card-title" style="text-align: center;">{{libro?.titulo}} ({{libro?.idioma}})</h3>
+        <h4 class="card-title" style="margin-top: 2rem; color: #4e4e4ec8;">- {{libro?.autor}}</h4>
+        <h5 class="card-title" style="margin-top: 2rem; color: rgb(6, 218, 255)">Editorial: {{libro?.editorial}}</h5>
+        <p class="card-text" style="text-align: justify;">{{libro?.descripcion?.substring(0,200) + "..."}}</p>
+        <h6>Número de páginas: {{libro?.numeroPaginas}}</h6>
+        <h6>Fecha de publicación: {{libro?.fechaPublicacion}}</h6>
+        <div style="display: flex;">
+          <h5>Precio:&nbsp;</h5>
+          <h5 [ngStyle]="{'color': libro?.precio === 'No disponible' ? 'red' : 'green'}">{{libro?.precio}}</h5>
+        </div>
+        <!-- <h4 [ngStyle]="{'color': libro?.precio === 'Lo sentimos. Este libro se encuentra agotado :(' ? 'red' : 'green'}">Precio: {{libro?.precio}}</h4> -->
+        <a href="{{libro?.linkDeVenta}}" target="_blank" style="display: flex; justify-content: center;">
+          <button class="btn btn-primary" style="margin-top: 2rem; font-size: 1.3rem;">Comprar</button>
+        </a>
+      </div>
+    </div>
+  </ng-container>
+</div>
+

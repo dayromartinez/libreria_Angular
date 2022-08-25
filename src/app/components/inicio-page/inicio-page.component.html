@@ -1,0 +1,17 @@
+<div>
+  <h1 class="titulo_pagina_inicio">¡Bienvenid@ a la Librería Macondo!</h1>
+  <a style="display: flex; justify-content: center; margin-bottom: 3rem;" href="https://es.wikipedia.org/wiki/Macondo">
+    <img src="https://www.infobae.com/new-resizer/37UQT-PZBeZfLPjRUkGxXtc8v6k=/768x432/filters:format(webp):quality(85)/arc-anglerfish-arc2-prod-infobae.s3.amazonaws.com/public/IHO5ZAQEMBGTFH3VNYHGSS2CDY" />
+  </a>
+  <h3 style="text-align: justify; margin: 0 2rem 3rem 2rem;">En esta librería virtual encontrarás un catálogo diverso y amplio de libros, tan rico y vasto como el universo Macondiano. Nos especializamos en literatura latinoamericana del siglo XX y contemporánea, con énfasis en los géneros de narrativa y poesía.  </h3>
+
+  <h4 style="margin: 0rem 2rem 2rem 2rem;">Pero y antes que nada, ¿Qué es <i>Macondo</i>?</h4>
+  <p style="margin: 1rem 2rem 3rem 2rem; font-size: 18px; text-align: justify;"><b>Macondo</b> es el pueblo ficticio descrito en las novelas <i>Cien años de soledad, Los funerales de la Mamá Grande, La hojarasca, La mala hora, El coronel no tiene quien le escriba y Monólogo de Isabel viendo llover en Macondo</i> del colombiano, premio Nobel de literatura, <b>Gabriel García Márquez</b>. En 2005, por una iniciativa local, se propuso renombrar a Aracataca, pueblo natal de García Márquez, como Macondo con el fin de reactivar la economía de este pueblo, sumido en tal pobreza que se ha declarado en quiebra. Sin embargo, el referéndum realizado en Aracataca mostró un escaso interés por parte de sus habitantes y la medida no fue aprobada.</p>
+  <h3 style="margin: 0rem 2rem 2rem 2rem; text-align: center;"> 🡻 Este maravilloso universo vive aquí 🡻 </h3>
+  <h2 style="text-align: center; margin: 3rem 0 3rem 0">{{libro?.titulo}}</h2>
+  <a href="https://es.wikipedia.org/wiki/Cien_a%C3%B1os_de_soledad" style="display: flex; justify-content: center;" target="_blank">
+    <img src={{libro?.imagen}} style="width: 20%; height: auto; margin-bottom: 3rem;"/>
+  </a>
+  <h4 style="text-align: center;">{{libro?.autor}}</h4>
+  <p style="margin: 3rem 2rem 3rem 2rem; text-align: justify; font-size: 17px;">{{libro?.descripcion}}</p>
+</div>
